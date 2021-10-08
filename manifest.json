@@ -1,0 +1,22 @@
+{
+    "name": "Dividend Tracker",
+    "description": "Pull holdings from M1 and send divie schedule to Google calendar",
+    "version": "1.0",
+    "manifest_version": 2,
+    "browser_action": {
+        "default_popup": "index.html"
+    },
+    "permissions": [
+        "tabs",
+        "https://www.zikanalytics.com/*"
+    ], 
+    "web_accessible_resources": ["merge_from_ofoct.csv"],
+    "content_scripts": [
+        {
+        "matches": ["https://www.zikanalytics.com/*"],
+        "js": ["calc.js", "papaparse.js"],
+        "css": ["myStyles.css"],
+        "run_at": "document_idle"        
+        }
+    ]
+}

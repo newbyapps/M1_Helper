@@ -1,0 +1,25 @@
+a.relist {
+    background-color: lightgreen; 
+    border: none;
+    color: blue;
+    padding: 15px 32px;
+    margin-right: 50px;
+    margin-left: 200px;
+    margin-bottom: 20px;
+    text-align: right;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+a.walmart {
+    background-color: lightyellow; 
+    border: none;
+    color: blue;
+    padding: 15px 32px;
+    margin-bottom: 20px;
+    text-align: right;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
