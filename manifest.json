@@ -8,13 +8,13 @@
     },
     "permissions": [
         "tabs",
-        "https://www.zikanalytics.com/*"
+        "https://dashboard.m1finance.com/d/invest/holdings"
     ], 
     "web_accessible_resources": ["merge_from_ofoct.csv"],
     "content_scripts": [
         {
-        "matches": ["https://www.zikanalytics.com/*"],
-        "js": ["calc.js", "papaparse.js"],
+        "matches": ["https://dashboard.m1finance.com/d/invest/holdings"],
+        "js": ["do_the_things.js"],
         "css": ["myStyles.css"],
         "run_at": "document_idle"        
         }
