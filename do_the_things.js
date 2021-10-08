@@ -3,12 +3,13 @@ function sleep(ms) {
 }
 
 async function get_dem_stonks() {
-    await sleep(2000);
+    // Maybe a better way to do this but ultimately we just need the page to fully load before running the script
+    await sleep(3000);
 
     var rows = document.querySelectorAll('a.row__StyledGridTableRow-ncfewc-0.duTlLi');
     var stonks = []
 
-    // get and store dem stonks into a dictionary along with the amount of shares
+    // get and store dem stonks into an array
     rows.forEach(function (item, index) {
         var stock = item.children[0].children[0].children[1].children[0].children[0].children[0].textContent;
         var amount = item.children[1].children[0].textContent
@@ -17,11 +18,12 @@ async function get_dem_stonks() {
         stonks.push([stock, amount, price])
     });
 
-    // Start the CSV stuffs
-    //define the heading for each row of the data  
+    // *** Start the CSV stuffs ***
+
+    // define the heading for each row of the data  
     var csv = 'ticker,shares,avg_price\n';
 
-    //merge the data with CSV  
+    // merge the data with CSV  
     stonks.forEach(function (row) {
         csv += row.join(',');
         csv += "\n";
@@ -37,6 +39,5 @@ async function get_dem_stonks() {
     hiddenElement.click();
 
 }
-
 
 get_dem_stonks();
