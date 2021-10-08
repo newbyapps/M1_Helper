@@ -1,2 +1,3 @@
 # M1_Helper
-Pull holdings from M1 and send divie schedule to Google calendar
+Very simple chrome extension to pull holding from M1 account and download as CSV
+Holdings are found at https://https://dashboard.m1finance.com/d/invest/holdings
