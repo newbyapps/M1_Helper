@@ -29,6 +29,26 @@ async function get_dem_stonks() {
         csv += "\n";
     });
 
+    // accessing webpage
+    var page = document.querySelector('div.sc-bdnylx.bSnEsS');
+
+    // add download button to the page
+    var button = document.createElement('button');
+    button.setAttribute('type', "button");
+    button.setAttribute('id', "magic_button");
+    button.innerText = "Download CSV";
+    page.appendChild(button);
+
+    // add listener
+    var magic_button = document.getElementById("magic_button");
+    magic_button.addEventListener("click", function (e) {
+        download_csv(csv);
+    }, false);
+
+}
+
+function download_csv(csv) {
+    // ** Kinda hacky, but it works **
     // stuff needed to download csv
     var hiddenElement = document.createElement('a');
     hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
@@ -37,7 +57,6 @@ async function get_dem_stonks() {
     //provide the name for the CSV file to be downloaded  
     hiddenElement.download = 'M1_Stonks.csv';
     hiddenElement.click();
-
 }
 
 get_dem_stonks();
